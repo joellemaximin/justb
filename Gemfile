@@ -17,6 +17,7 @@ gem 'dotenv-rails'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'mailgun-ruby', '~>1.1.6'
 gem 'bootstrap-sass'
 gem 'crystal_flash_messages'
 gem 'execjs'
@@ -40,8 +41,6 @@ group :development, :test do
 end
 
 group :development do
-
-  gem 'mailgun-ruby', '~>1.1.6'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
 end
