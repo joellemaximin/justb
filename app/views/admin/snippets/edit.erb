@@ -1,0 +1,12 @@
+<h1>Edit Snippet</h1>
+
+<%= model_error_messages(@snippet) %>
+
+<%= form_for @snippet, url: admin_snippet_path(@snippet), method: :patch do |f| %>
+  <%= render partial: 'form', locals: {f: f} %>
+
+  <div>
+    <%= submit_tag 'Update snippet', class: 'btn btn-primary btn-lg' %>
+  </div>  
+<% end %>
+

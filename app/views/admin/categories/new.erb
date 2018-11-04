@@ -1,0 +1,14 @@
+<h1>Nouvelle Catégories</h1>
+
+<%= form_for @category, url: admin_categories_path do |f| %>
+	
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: 'form-control' %>
+	</div>
+
+	<div>
+		<%= submit_tag 'Créer une catégorie', class: 'btn btn-primary' %>
+	</div>
+
+<% end %>

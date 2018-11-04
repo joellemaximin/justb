@@ -1,0 +1,13 @@
+<h1>Edit produit</h1>
+
+<%= model_error_messages(@product)%>
+
+<%= form_for @product, url: admin_product_path(@product), method: :patch, html: { multipart: true } do |f| %>
+
+	<%= render partial: 'form', locals: { f: f } %>
+
+<div>
+  <%= submit_tag 'Update produit', class: 'btn btn-primary' %>
+</div>
+
+<% end %>

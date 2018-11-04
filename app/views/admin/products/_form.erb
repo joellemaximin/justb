@@ -1,0 +1,48 @@
+<div class="form-group">
+	<%= f.label :title %>
+	<%= f.text_field :title, class: 'form-control' %>
+</div>
+
+<div class="form-group">
+	<%= f.label :description %>
+	<%= f.text_area :description, class: 'form-control' %>
+
+</div>
+
+<div class="form-group">
+	<%= f.label :composition %>
+	<%= f.text_area :composition, class: 'form-control' %>
+
+</div>
+
+<div class="form-group">
+	<%= f.label :price %>
+	<%= f.text_field :price, class: 'form-control' %>
+</div>
+
+  
+<% if @product.photos.any? %>
+  <ul>
+    <% @product.photos.each do |photo| %>
+      <li>
+        <%= image_tag photo.picture.url(:medium) %>
+        <%= link_to 'remove', destroy_photo_admin_product_path(@product, product_photo_id: photo.id), method: :delete, class: 'btn btn-danger' %>
+        <br>
+        <br>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<div class="form-group">
+  <%= f.label :photos, :class => 'control-label' %>
+  <div class="controls">
+    <!-- The magic is coming ...look at my eyes....shazammmm -->
+    <!-- Use HTML5 multiple attribute to enable multiple selection
+         and pass back to controller all files as an array, ready 
+         for paperclip!!
+         file_field_tag, since images is not a gallery attribute
+     -->
+    <%= file_field_tag "images[]", type: :file, multiple: true %>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<h1>Snippets</h1>
+
+<table class="table">
+	<thead>
+		<th>Key</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+		<% @snippets.each do |snippet| %>
+		<tr>
+			<td><%= snippet.key %></td>
+			<td>
+				<%= link_to "Modifier", edit_admin_snippet_path(snippet),  class: 'btn btn-default btn-sm' %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

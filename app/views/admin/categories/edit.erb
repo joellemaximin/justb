@@ -1,0 +1,16 @@
+<h1>Edit catégorie</h1>
+
+<%= model_error_messages(@category)%>
+
+<%= form_for @category, url: admin_category_path(@category) do |f| %>
+	
+	<div class="form-group">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: 'form-control' %>
+	</div>
+
+<div>
+  <%= submit_tag 'Update catégorie', class: 'btn btn-primary' %>
+</div>
+
+<% end %>

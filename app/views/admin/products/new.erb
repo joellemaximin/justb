@@ -1,0 +1,15 @@
+<h1>Nouveau produit</h1>
+
+<%= form_for @product, url: admin_products_path, html: { multipart: true } do |f| %>
+	
+	<div class="form-group">
+		<%= f.label :Categorie %>
+        <%= f.select :category_id, Category.all.map { |category| [ category.title, category.id ] }, class: 'form-control' %>
+    </div>
+	<%= render partial: 'form', locals: { f: f } %>
+
+	<div>
+		<%= submit_tag 'Créer un produit', class: 'btn btn-primary' %>
+	</div>
+
+<% end %>

@@ -1,0 +1,17 @@
+Bonjour; Madame <%= params[:order].first_name %> <%= params[:order].last_name %> 
+
+Votre commande a bien ete pris en compte.
+Vous recevrez une confirmation par email dans les prochaines 24 heures.
+
+Nom: <%= params[:order].first_name %> <%= params[:order].last_name %> 
+Telephone: <%= params[:order].phone %>
+Email: <%= params[:order].email %>
+Liste de produits: <%= params[:order].product_id %>
+Liste de produits: <%= params[:order].quantity %>
+Liste de produits: <%= params[:order].total_price %>
+Liste de produits: <%= params[:order].order_id %>
+
+
+
+-----
+JustBeauty

@@ -1,0 +1,24 @@
+<h1>Mes réservations produits</h1>
+
+<table class="table">
+	<thead>
+		<th>ID</th>
+		<th>Last Name</th>
+		<th>First name</th>
+		<th>Email</th>
+		<th>Tél</th>
+		<th>Notes</th>
+		<th>&nbsp;</th>
+	</thead>
+	<tbody>
+		<% @bookings.each do |booking| %>
+		<td><%= booking.id %></td>
+		<td><%= booking.first_name %></td>
+		<td><%= booking.last_name %></td>
+		<td><%= booking.email %></td>
+		<td><%= booking.phone %></td>
+		<td><%= booking.notes %></td>
+	</tbody>
+	<% end %>
+
+</table>

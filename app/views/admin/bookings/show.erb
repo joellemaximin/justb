@@ -1,0 +1,24 @@
+<h1>Booking #<%= @booking.id %></h1>
+
+<% if @booking.paid? %>
+  <%= link_to 'Set as unpaid', set_as_unpaid_admin_booking_path(@booking), method: :patch, class: 'btn btn-danger btn-lg' %>
+<% else %>
+  <%= link_to 'Set as PAID', set_as_paid_admin_booking_path(@booking), method: :patch, class: 'btn btn-success btn-lg' %>
+<% end %>
+
+<dl class="booking">
+  <dt>First name :</dt>
+  <dd><%= @booking.first_name %></dd>
+
+  <dt>Last name :</dt>
+  <dd><%= @booking.last_name %></dd>
+
+  <dt>Email :</dt>
+  <dd><%= @booking.email %></dd>
+
+  <dt>Phone :</dt>
+  <dd><%= @booking.phone %></dd>
+
+  <dt>Product</dt>
+  <dd><%= @booking.notes %></dd>
+</dl>
