@@ -1,4 +1,6 @@
 User.create!(email: 'joelle.maximin@gmail.com', password: 'admin23')
+User.create!(email: 'justbeauty9111@gmail.com', password: 'admin123')
+
 
 #SNIPPETS LIST
 Snippet.create(key: 'homepage_header', body: '<h1>Bienvenue sur JustBeauty</h1>')

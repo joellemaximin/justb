@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
         BookingsMailer.with(booking: @booking).confirmation_notification.deliver_now
         BookingsMailer.with(booking: @booking).notification_to_admin.deliver_now
         redirect_to new_booking_path
-        flash[:notice] = "Votre réservation a bien été envoyé"
+        flash[:success] = "Votre réservation a bien été envoyé"
 
       else
         render 'new'

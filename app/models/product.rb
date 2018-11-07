@@ -5,7 +5,7 @@ class Product < ApplicationRecord
 
 	validates_presence_of :category
 	validates_presence_of :title
-	validates_presence_of :price	
+	validates_presence_of :price
 
 	has_many :photos, class_name: 'ProductPhoto'
 

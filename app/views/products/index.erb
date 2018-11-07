@@ -1,46 +1,37 @@
-<div class="container">
-    <%= image_tag("justbeauty.jpg", width: "650", height: "300", style: "text-center" ) %>
+<div class=" container">
+    <%= image_tag("justbeauty.jpg", class: "img-responsive", width: "850", height: "300", style: "text-center" ) %>
+    
 
-<h3><%= show_snippet('produit_list_header')%></h3>
+    <h3><%= show_snippet('produit_list_header')%></h3>
 
-<hr/>
-
-
-
-    <div id="products-list">
+    <div class="product-list">
     	<% @products.each do |product| %>
-        <div class="row">
+        <div class="row">        
+            <% if first_photo = product.photos.first %>
+               <div class="product-photo">
+                 <%= image_tag first_photo.picture.url(:medium) %>
+               </div>
+            <% end %>
+        
+            
             <div class="col-md-6 ">
-                <div class="photo">
-                  <% if first_photo = product.photos.first %>
-                      <div class="photolist">
-                        <%= image_tag first_photo.picture.url(:medium) %>
-                      </div>
-                  <% end %>
+                <div class="title"><%= product.title %></div>
 
+                <div class="description"><%= product.description %></div>       
+
+                <div class="composition"><%= product.composition %></div>       
+            
+
+                <div class="form-group">
+                    <%= form_for(@order_item, remote: true) do |f| %>
+                        <%= f.hidden_field :product_id, value: product.id %>
+                        <h5><%= product.price %></h5>
+                        <div><%= f.number_field :quantity, value: 1, min: 1 %></div>
+                        
+                        
+                        <%= f.submit 'Ajouter', class: 'btn btn-sm btn-product' %>
+                    <% end %>
                 </div>
-                
-                <div class="col-md-12" style="text-align: center;">
-                    <p class="title"><%= product.title %></p>
-
-                    <p class="description"><%= product.description %></p>       
-
-                    <p class="composition"><%= product.composition %></p>       
-                
-
-                    <div class="form-group">
-                        <%= form_for(@order_item, remote: true) do |f| %>
-                            <%= f.hidden_field :product_id, value: product.id %>
-                            <h5><%= product.price %></h5>
-                            <div >
-                                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
-                            </div>
-                            <%= f.submit 'Ajouter', class: 'btn btn-sm btn-product' %>
-                        <% end %>
-                    </div>
-                    
-                </div>
-
             </div>
         <% end %>
         </div>

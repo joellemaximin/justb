@@ -1,42 +1,41 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
 
-img {
-display:block;
-width:auto;
-margin-left:auto;
-margin-right:auto;
+.container {
+  padding: 0 10px 30px 10px;
+}
+
+.product-list {
+  margin-top: 90px;
+  
+}
+
+.btn-product{
+    background-color: #ff4da6;
+    padding: 9px 11px;
+    margin-top: 17px;
+}
+
+.product-list, 
+.group-cart{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3em;
+    text-align: center;
 }
 
 div.admin {
 	background-color: #000453;
 }
 
-body.client{
+body.client,
+div.navbar{
 	background-color: #090a0b;
 	
-	h1,h2,h3,h4,h5, span, label {
+	h1,h2,h3,h4,h5, span, a, label {
 	color: #ffff;
+    text-align: center;
    }
 
-}
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.btn-product{
-	background-color: #ff4da6;
-	padding: 9px 11px;
-	margin-top: 17px;
-}
-
-
-
-.product-photo {
-  margin-bottom: 55px;
-  margin-left: 125px;
 }
 
 
@@ -51,7 +50,7 @@ ul {
   margin-top: 10vh;
 
   h3{
-  background-size: 15px
+  background-size: 15px;
   }
 
 }
@@ -72,8 +71,8 @@ ul {
 
 }
 .form-container {
-	border:1px solid #ffff;
-	padding:40px 60px;
+	border: 1px solid #ffff;
+	padding: 40px 60px;
 	margin-top: 20vh;
 
 	-webkit-box-shadow: 1px 10px 33px 12px rgba(214,69,214,1);
@@ -86,14 +85,18 @@ ul {
 	margin: 40px auto;
 }
 
-.listproduit{
-	background-color: rgba(30, 255, 50, 0.5);
-
-}
 .numbergroup{
 	padding: 5px;
 }
 
 .btn-block{
 	margin: 15px 0;
+}
+
+/**** MEDIA QUERIES ****/
+
+@media only screen and (max-width: 480px){
+    .justpic{
+    max-width: 300px;
+    }
 }

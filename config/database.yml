@@ -27,4 +27,5 @@ test:
   port: 5433
  
 production:
-  database: <%= ENV['POSTGRES_DB'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+ 

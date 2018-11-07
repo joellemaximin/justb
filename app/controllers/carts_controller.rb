@@ -5,9 +5,19 @@ class CartsController < ApplicationController
   end
 
   def checkout
+    current_order.update!(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      phone: params[:phone],
+    )
+
     OrdersMailer.with(order: current_order).checkout_notification.deliver_now
     OrdersMailer.with(order: current_order).notification_to_admin.deliver_now
-    flash[:notice] = "Merci pour votre commande, une réponse sera envoyé dans les prochaines 24heures."
+    flash[:success] = "Merci pour votre commande, une réponse sera envoyé dans les prochaines 24heures."
+    
+    session[:order_id] = nil
+    
     redirect_to "/carts"
   end
 
