@@ -10,6 +10,7 @@ def create
 	if @order.save
 		session[:order_id] = @order.id
 	else
+		#binding.irb
 	    render 'create'
     end
 

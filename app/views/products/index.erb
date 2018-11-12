@@ -1,40 +1,37 @@
-<div class=" container">
-    <%= image_tag("justbeauty.jpg", class: "img-responsive", width: "850", height: "300", style: "text-center" ) %>
-    
+<%= image_tag("justbeauty.jpg", class: "img-fluid rounded", width: "850", height: "300", style: "text-center" ) %>
 
-    <h3><%= show_snippet('produit_list_header')%></h3>
 
-    <div class="product-list">
-    	<% @products.each do |product| %>
-        <div class="row">        
-            <% if first_photo = product.photos.first %>
-               <div class="product-photo">
-                 <%= image_tag first_photo.picture.url(:medium) %>
-               </div>
-            <% end %>
-        
-            
-            <div class="col-md-6 ">
-                <div class="title"><%= product.title %></div>
+<h3><%= show_snippet('produit_list_header')%></h3>
 
-                <div class="description"><%= product.description %></div>       
-
-                <div class="composition"><%= product.composition %></div>       
-            
-
-                <div class="form-group">
-                    <%= form_for(@order_item, remote: true) do |f| %>
-                        <%= f.hidden_field :product_id, value: product.id %>
-                        <h5><%= product.price %></h5>
-                        <div><%= f.number_field :quantity, value: 1, min: 1 %></div>
-                        
-                        
-                        <%= f.submit 'Ajouter', class: 'btn btn-sm btn-product' %>
-                    <% end %>
-                </div>
-            </div>
+<div class="container">
+	<% @products.each do |product| %>
+    <div class="row">
+      <div class="three columns">
+      
+        <% if first_photo = product.photos.first %>
+          <div class="photo">
+           <%= image_tag first_photo.picture.url(:medium) %>
+          </div>
         <% end %>
-        </div>
-    </div>
 
+      </div>
+      
+      <div>
+        <div class="title"><%= product.title %></div>
+
+        <div class="description"><%= product.description %></div>       
+
+        <div class="composition"><%= product.composition %></div>
+        <div>
+          <%= form_for(@order_item, remote: true) do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <h5><%= product.price %></h5>
+            <div><%= f.number_field :quantity, value: 1, min: 1 %></div>
+            <%= f.submit 'Ajouter', class: 'btn btn-sm btn-product' %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

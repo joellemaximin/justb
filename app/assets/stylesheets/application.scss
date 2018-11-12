@@ -1,13 +1,23 @@
 @import "bootstrap";
 
-.container {
-  padding: 0 10px 30px 10px;
+
+body.client,
+.navbar{
+    background-color: #090a0b;
+    
+    h1,h2,h3,h4,h5, span, a, flash, label {
+    color: #ffff;
+    text-align: center;
+   }
+
 }
 
-.product-list {
-  margin-top: 90px;
-  
+.container {
+  padding: 0 10px 30px 10px;
+  margin: 0 25px;
 }
+
+
 
 .btn-product{
     background-color: #ff4da6;
@@ -18,25 +28,13 @@
 .product-list, 
 .group-cart{
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.3em;
-    text-align: center;
+  
 }
 
 div.admin {
 	background-color: #000453;
 }
 
-body.client,
-div.navbar{
-	background-color: #090a0b;
-	
-	h1,h2,h3,h4,h5, span, a, label {
-	color: #ffff;
-    text-align: center;
-   }
-
-}
 
 
 #cart_item{
@@ -68,9 +66,9 @@ div.navbar{
 .buttoncart :hover{
 	background-color: #ffff;
 	color: #e256c4;
-
 }
 .form-container {
+  background: yellow;
 	border: 1px solid #ffff;
 	padding: 40px 60px;
 	margin-top: 20vh;

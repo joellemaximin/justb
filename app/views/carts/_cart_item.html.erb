@@ -5,81 +5,78 @@
         <% end %>
     </ul>
 <% end %>
-<div class="group-cart">
-    <div class="container-fluid">  
-        <span>Réserver et Récupérez vos produits une heure plus tard</span>
 
-        <hr/>
+<div class="container">  
+    <span>Réserver et Récupérez vos produits une heure plus tard</span>
 
-        <% if @order_items.size>0 %>
-            <% @order_items.each do |item| %>
-                <div class="row ">
-                    <div class="col-lg-6">
-                    
-                      <h3><%= item.product.title %></h3>
-                    
-                    </div>
+    <hr/>
 
-                    <div class="col-lg-6">
-                        <div class="input-group">
-                            <%= form_for(item,  remote: true) do |f| %>
-                                <%= f.hidden_field :product_id, value: item.product.id %>
-                                <h4><%= item.product.price %></h4>
-                                <div class="form-group">
-                                    <%= f.number_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
-                                </div>
-                                <div class="btn-group">
-                                    <%= f.submit 'Ajouter', class: 'btn btn-sm btn-primary' %>
-                                    <%= link_to 'Supprimer', item,  remote: true, method: :delete,  class: 'btn btn-sm btn-danger' %>
-                                </div>
-                                <span>Prix Total: <%= item.total_price %></span>
-
-                            <% end %>
-                        </div>
-                    </div>
-                <% end %>
-
-                </div>
-
-            <% else %>
-
-        <% end %>
-    </div>
-    </div>
-    
-
-
-    <div class="container-fluid form-user">
-       <%= form_tag('/carts/checkout') %>
-      
+    <% if @order_items.size>0 %>
+      <% @order_items.each do |item| %>
         <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-12"></div>
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <h3>Réserve ton cadis</h3>
+          <div class="col">
+            <h3 class=""><%= item.product.title %></h3>
+          </div>
 
-                <hr/>
-            
-                <form class="form-container">    
-                    <div class="form-group">
-                        <input type="text" name="last_name" class="form-control" placeholder="Nom">
-                    </div>
+          <div class="col">
+            <div class="col-md-4 col-lg-4">
+              <%= form_for(item,  remote: true) do |f| %>
+                <%= f.hidden_field :product_id, value: item.product.id %>
+                <h4><%= item.product.price %></h4>
+                <div class="form-group ">
+                    <%= f.number_field :quantity, value: item.quantity.to_i, min: 1, class: 'form-control' %>
+                </div>
+                <div class="btn-group">
+                    <%= f.submit 'Ajouter', class: 'btn btn-sm btn-primary' %>
+                    <%= link_to 'Supprimer', item,  remote: true, method: :delete,  class: 'btn btn-sm btn-danger' %>
+                </div>
+                <span class="col-auto">Prix Total: <%= item.total_price %></span>
 
-                    <div class="form-group">
-                        <input type="text" name="first_name" class="form-control" placeholder="Prénom">
-                    </div>
-                
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-control" placeholder="Email">
-                    </div>
-                    <div>
-                        <input type="tel"  name="phone" class="form-control" placeholder="Tél">
-                    </div>
-              
-                    <button type="submit" class="btn btn-success btn-block form-group">Réserver ma commande</button>
-                </form>
+              <% end %>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+          </div>
+        <% end %>
+
         </div>
-    </div>    
+
+      <% else %>
+
+    <% end %>
+  </div>
+
+
+
+  <div class="container">
+    <%= form_tag('/carts/checkout') %>
+    
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <h3>Réserve ton cadis</h3>
+
+          <hr/>
+      
+          <form class="form-container" id="checkout_info">    
+            <div class="form-group">
+                <input type="text" name="last_name" class="form-control" placeholder="Nom">
+            </div>
+
+            <div class="form-group">
+                <input type="text" name="first_name" class="form-control" placeholder="Prénom">
+            </div>
+        
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email">
+            </div>
+            <div>
+                <input type="tel"  name="phone" class="form-control" placeholder="Tél">
+            </div>
+      
+            <button type="submit" class="btn btn-success btn-block form-group">Réserver ma commande</button>
+          </form>
+        </div>
+      <div class="col-md-4 col-sm-4 col-xs-12"></div>
+    </div>
+  </div>
 </div>
    

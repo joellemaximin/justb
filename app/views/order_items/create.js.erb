@@ -1,5 +1,5 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
-    alert("Invalid")
+    alert("Invalid -- Order: <%= @order.errors.full_messages.join(',') %> -- Order Item: <%= @order_item.errors.full_messages.join(',') %>  ")
 <% else %>
     document.getElementById("cart").innerHTML = "<%= escape_javascript(render 'layouts/cart') %> ";
 <% end %>

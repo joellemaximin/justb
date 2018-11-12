@@ -7,34 +7,55 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
   </head>
 
   <body class="client">
-    <div class='navbar navbar-static-top'>
-      <div class='container-fluid'>
-        <button class='navbar-toggle' data-target='.navbar-responsive-collapse' data-toggle='collapse' type='button'>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
-          <span class='icon-bar'></span>
+
+    <nav class="navbar navbar-expand-lg">
+      <%= link_to 'JustBeauty', products_path, class: 'navbar-brand' %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" style="color:white;">
+          <span class="navbar-toggler-icon"></span>
         </button>
-          <%= link_to 'JustBeauty', products_path, class: 'navbar-brand' %>
-        <div class='navbar-collapse collapse navbar-responsive-collapse'>
-          <ul class='nav navbar-nav '>
-            <li><a href="/products?category_id=1">Produits Capillaire</a></li>
-            <li><a href="/products?category_id=2">Accessoires</a></li>
-            <li><a href="/products?category_id=3">Maquillages</a></li>
-            <li><a href="/products?category_id=4">Tissages</a></li>
-            <li><a href="/products?category_id=5">Perruques</a></li>
-            <li><%= link_to 'Reservation', new_booking_path %></li>
-            <li><%= link_to 'Contact', 'mailto:justbeauty97111@gmail.com ' %></li>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="/products?category_id=1">Produits Capillaire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products?category_id=2">Accessoires</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products?category_id=3">Maquillages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products?category_id=4">Tissages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/products?category_id=5">Perruques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/bookings/new" >Reservation</a>
+                
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="mailto:justbeauty97111@gmail.com">Contact</a>
+                
+            </li>
           </ul>
           
-          <ul class="nav navbar-nav navbar-right">
-            <li id="cart"><%= render "layouts/cart" %></li>
+          <ul class="nav navbar-nav justify-content-end">
+            <li class="nav-item mr-sm-2" id="cart"><%= render "layouts/cart" %></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
-    </div>
+    </nav>
 
     <div class="container">
       <div class="row">
@@ -54,5 +75,8 @@
         <%= show_snippet('footer')%>
       </footer>
     </div>
+
+
+
   </body>
 </html>

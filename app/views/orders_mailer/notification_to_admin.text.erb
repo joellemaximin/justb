@@ -6,5 +6,10 @@ Nom: <%= params[:order].first_name %> <%= params[:order].last_name %>
 Téléphone: <%= params[:order].phone %>
 Email: <%= params[:order].email %>
 
+Commande:
+<% params[:order].order_items.each do |order_item| %>
+  - <%= order_item.product.title %> (x<%= order_item.quantity %>)
+<% end %>
+
 -----
 JustBeauty

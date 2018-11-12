@@ -7,6 +7,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+          <script src="main.js"></script>
+
+
   </head>
 
   <body>
@@ -36,15 +44,17 @@
       </div><!-- /.container-fluid -->
     </div>
 
-    <div class="container">
+    <div class="container"> 
       <div class="row">
         <div class="col-md-12">
 
           <%= yield %>
         </div>
       </div>
+  
 
+
+    
       <hr>
-
   </body>
 </html>

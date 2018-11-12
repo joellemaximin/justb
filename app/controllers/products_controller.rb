@@ -9,6 +9,7 @@ def index
 end
 
 
+
 	private 
 
 	def set_all_products
