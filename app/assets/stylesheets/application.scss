@@ -13,16 +13,21 @@ body.client,
 }
 
 .container {
-  padding: 0 10px 30px 10px;
-  margin: 0 25px;
+  padding: 30px 0;
+  margin: 0 ;
 }
 
 
 
 .btn-product{
-    background-color: #ff4da6;
-    padding: 9px 11px;
-    margin-top: 17px;
+  background-color: #ff4da6;
+  padding: 9px 11px;
+  margin-top: 17px;
+}
+#cart_item{
+  padding: 0;
+  margin: 0;
+  background: #ffffff;
 }
 
 .product-list, 
@@ -35,12 +40,29 @@ div.admin {
 	background-color: #000453;
 }
 
+.title{
+  padding: 0 50px;
+  margin: 0;
+}
+
+.item-list{
+  text-align: center;
+  margin: 50px 50px;
+}
 
 
-#cart_item{
-	padding: 0;
-	margin: 0;
-	background: #ffffff;
+#description{
+  padding: 10px 0;
+  margin-top: 30px;
+
+}
+#description-list{
+  float:left;
+  size: 15px;
+  margin-top: 40px;
+  color: #ffff;
+
+
 }
 
 .form-user{
@@ -63,10 +85,12 @@ div.admin {
 	background-color: #e256c4;
 
 }
+
 .buttoncart :hover{
 	background-color: #ffff;
 	color: #e256c4;
 }
+
 .form-container {
   background: yellow;
 	border: 1px solid #ffff;
@@ -91,10 +115,23 @@ div.admin {
 	margin: 15px 0;
 }
 
+#checkout_info{
+  
+}
+
 /**** MEDIA QUERIES ****/
 
-@media only screen and (max-width: 480px){
-    .justpic{
-    max-width: 300px;
+@media (max-width: 576px) {
+
+  body.client,
+  .navbar{
+    background-color: #090a0b;
+    
+    h1,h2,h3,h4,h5, span, a, flash, label {
+    color: #ffff;
+    font-size: 14px;
     }
+
+  }
+
 }

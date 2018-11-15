@@ -1,22 +1,22 @@
-<%= image_tag("justbeauty.jpg", class: "img-fluid rounded", width: "850", height: "300", style: "text-center" ) %>
+<%= image_tag("justbeauty.jpg", class: "img-fluid rounded", width: "850", height: "300") %>
 
-
-<h3><%= show_snippet('produit_list_header')%></h3>
-
-<div class="container">
+<div class="title ">
+  <h3>
+    <%= show_snippet('produit_list_header')%>
+  </h3>
+</div>
+<div class="container-fluid">
 	<% @products.each do |product| %>
     <div class="row">
-      <div class="three columns">
-      
+      <div class="col-sm">   
         <% if first_photo = product.photos.first %>
-          <div class="photo">
+          <div class="photo" id="description">
            <%= image_tag first_photo.picture.url(:medium) %>
           </div>
         <% end %>
-
       </div>
       
-      <div>
+      <div id="description-list">
         <div class="title"><%= product.title %></div>
 
         <div class="description"><%= product.description %></div>       
@@ -32,6 +32,8 @@
 
         </div>
       </div>
+
     </div>
   <% end %>
+
 </div>

@@ -17,6 +17,7 @@ gem 'dotenv-rails'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem "mini_magick"
 gem 'mailgun-ruby', '~>1.1.6'
 #gem 'bootstrap-sass'
 gem 'bootstrap'
