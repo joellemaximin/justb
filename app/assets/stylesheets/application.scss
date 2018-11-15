@@ -57,10 +57,16 @@ div.admin {
 
 }
 #description-list{
-  float:left;
-  size: 15px;
+  font-size: 14px;
+  overflow: hidden;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  display: block;
   margin-top: 40px;
   color: #ffff;
+  text-align: center;
+
 
 
 }

@@ -1,6 +1,6 @@
 <%= image_tag("justbeauty.jpg", class: "img-fluid rounded", width: "850", height: "300") %>
 
-<div class="title ">
+<div class="title">
   <h3>
     <%= show_snippet('produit_list_header')%>
   </h3>
@@ -8,7 +8,7 @@
 <div class="container-fluid">
 	<% @products.each do |product| %>
     <div class="row">
-      <div class="col-sm">   
+      <div class="col">   
         <% if first_photo = product.photos.first %>
           <div class="photo" id="description">
            <%= image_tag first_photo.picture.url(:medium) %>
@@ -17,7 +17,7 @@
       </div>
       
       <div id="description-list">
-        <div class="title"><%= product.title %></div>
+        <div class="title-prod"><%= product.title %></div>
 
         <div class="description"><%= product.description %></div>       
 
@@ -25,7 +25,7 @@
         <div>
           <%= form_for(@order_item, remote: true) do |f| %>
             <%= f.hidden_field :product_id, value: product.id %>
-            <h5><%= product.price %></h5>
+            <p><%= product.price %> EUR</p>
             <div><%= f.number_field :quantity, value: 1, min: 1 %></div>
             <%= f.submit 'Ajouter', class: 'btn btn-sm btn-product' %>
           <% end %>
